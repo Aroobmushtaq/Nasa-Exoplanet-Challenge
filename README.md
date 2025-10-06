@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+#  Exoplanet Classifier (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the **frontend** of the Exoplanet Classifier project. It provides a responsive and user-friendly interface for classifying exoplanets based on their parameters. Users can input planetary data and instantly receive predictions powered by a machine learning model.
 
-## Available Scripts
+Built with **React.js** and **Tailwind CSS**, this frontend ensures speed, clarity, and responsiveness across all devices.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+##  Project Links
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ **Live Demo:** [Exoplanet Classifier (Deployed)](https://lnkd.in/geDz7zpV)
+ **Project Video:** [Watch on Bitly](http://bit.ly/48brPPI)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+##  Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Interactive input form for planet parameters
+* Real-time prediction display
+* Responsive design for all screen sizes
+* API integration for ML-based predictions
+* Clean and minimal user interface
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **Frontend Framework:** React.js
+* **Styling:** Tailwind CSS
+* **Icons:** Lucide React
+* **Routing:** React Router DOM
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+##  Backend API
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The **backend API** for this project was developed and deployed by a teammate.
+It provides endpoints for predicting exoplanet classifications using a trained machine learning model.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can explore the backend API documentation here:
+🔗 **[Backend API Docs – Hugging Face Space](https://touseefahmad-nasa-exoplanet-docker.hf.space/docs#/default/predict_csv_predict_csv_post)**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+###  API Request Details
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+####  Single Prediction
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To make a single prediction, send a POST request with the following JSON body to the backend API endpoint:
 
-### Code Splitting
+```json
+{
+  "depth": 0.01,
+  "duration": 2.5,
+  "eccentricity": 0.05,
+  "inclination": 89.5,
+  "period": 3.52,
+  "radius": 1.2,
+  "semi_major_axis": 0.05,
+  "snr": 15.5,
+  "stellar_mass": 1.0,
+  "stellar_radius": 1.0,
+  "stellar_temp": 5778
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ **Endpoint:**
 
-### Analyzing the Bundle Size
+```
+POST https://touseefahmad-nasa-exoplanet-docker.hf.space/predict_single
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+#### 🔹 Bulk Prediction
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+For bulk predictions, upload a CSV file containing multiple records.
+You can use the following **sample dataset** to test the API:
 
-### Advanced Configuration
+ [Download Sample CSV](https://drive.google.com/uc?export=download&id=1nDS-aSzo-RPBnlu52ZNCE6Ok-7L2_gT5)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ **Endpoint:**
 
-### Deployment
+```
+POST https://touseefahmad-nasa-exoplanet-docker.hf.space/predict_csv
+```
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 👥 Team
 
-### `npm run build` fails to minify
+* **Frontend Developer:** Aroob
+* **Backend Developer:** Touseef Ahmad
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+This project was developed as part of the NASA International Apps Challenge 2025.
