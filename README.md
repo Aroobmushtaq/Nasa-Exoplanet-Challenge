@@ -84,7 +84,6 @@ You can use the following **sample dataset** to test the API:
 ```
 POST https://touseefahmad-nasa-exoplanet-docker.hf.space/predict_csv
 ```
-```
 
 ## 👥 Team
 
